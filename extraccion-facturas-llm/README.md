@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # 🧾 Extracción de facturas PDF a JSON validado (LLM local + reglas del SRI)
 
 Convierte facturas ecuatorianas en PDF (digitales, **escaneadas** o **giradas**) en un JSON estructurado y **validado

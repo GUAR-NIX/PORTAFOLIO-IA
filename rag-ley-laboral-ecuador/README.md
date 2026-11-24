@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # ⚖️ Asistente RAG de la ley laboral del Ecuador (búsqueda híbrida + re-ranking + rechazo)
 
 Responde preguntas de trabajadores y pequeñas empresas (vacaciones, décimos, horas extra, despido, liquidación)

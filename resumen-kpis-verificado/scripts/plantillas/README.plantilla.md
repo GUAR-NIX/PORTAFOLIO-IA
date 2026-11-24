@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # 📊 Resúmenes ejecutivos de KPIs con verificación de cada cifra
 
 Un LLM local (`qwen2.5:7b` en Ollama, CPU) redacta para gerencia el resumen económico de un país de América Latina a partir de los indicadores del Banco Mundial, y un **verificador automático comprueba cada número del texto** contra una capa de KPIs determinista: correcta, incorrecta (con el valor real) o sin fuente. Se comparan cuatro enfoques en un conjunto de **validación** (5 informes de 2023, usado para ajustar el prompt) y uno de **prueba** (12 informes de 2024 de otros países, corrido una sola vez).

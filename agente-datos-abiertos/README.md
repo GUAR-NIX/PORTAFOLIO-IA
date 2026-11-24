@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # 🌐 Agente de datos abiertos con herramientas: Banco Mundial + Open-Meteo
 
 Un LLM local (`qwen2.5:7b` en Ollama, CPU) responde preguntas sobre economía y clima de América Latina **llamando a 5 herramientas** conectadas al Banco Mundial (WDI) y a Open-Meteo (ERA5). El proyecto mide por separado **lo que decide el LLM** (qué herramienta, con qué argumentos, cuándo abstenerse) y **lo que hace el código** (validar, verificar, ejecutar y redactar), en un conjunto de **validación** (44 preguntas, usado para ajustar) y uno de **prueba nuevo** (60 preguntas, corrido una sola vez).

@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English](README.en.md)
+
 # Portafolio de IA aplicada con LLM locales
 
 RAG híbrido, extracción estructurada, clasificación, agentes con herramientas y resúmenes verificados, todo con modelos locales y evaluación honesta.

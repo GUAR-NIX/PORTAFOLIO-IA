@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # 📨 Enrutamiento de quejas financieras: TF-IDF vs. embeddings vs. LLM, cascada y urgencia
 
 <!-- Archivo generado por `python -m quejas.informe` desde scripts/plantillas/README.md: todas las cifras salen de reports/resultados.json. -->

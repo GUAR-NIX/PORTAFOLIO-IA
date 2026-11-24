@@ -1,3 +1,5 @@
+🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+
 # 🔎 Sentimiento por aspecto en reseñas de Amazon: reglas vs embeddings vs LLM local
 
 ¿**De qué** se quejan los clientes de teléfonos y accesorios, y **cuánto les cuesta** a las marcas en estrellas?
