@@ -2,6 +2,8 @@
 
 # Applied AI with local LLMs
 
+[![CI](https://github.com/GUAR-NIX/PORTAFOLIO-IA/actions/workflows/ci.yml/badge.svg)](https://github.com/GUAR-NIX/PORTAFOLIO-IA/actions/workflows/ci.yml)
+
 Six projects that run on a PC without a GPU (Ollama, FastAPI, Streamlit). Each one compares the LLM with a simpler baseline and reports
 when the baseline wins or ties.
 
