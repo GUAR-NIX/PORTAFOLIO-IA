@@ -55,7 +55,7 @@ def similitud(a: str, b: str) -> float:
 def comparar_items(pred: list[dict], verdad: list[dict]) -> dict:
     pares = sorted(((similitud(p["descripcion"], v["descripcion"]), i, j)
                     for i, p in enumerate(pred) for j, v in enumerate(verdad)), reverse=True)
-    usados_p, usados_v, correctos, montos_ok = set(), set(), 0, 0
+    usados_p, usados_v, correctos = set(), set(), 0
     for s, i, j in pares:
         if s < UMBRAL_DESC or i in usados_p or j in usados_v:
             continue

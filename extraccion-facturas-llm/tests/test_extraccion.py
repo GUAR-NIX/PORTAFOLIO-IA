@@ -139,7 +139,7 @@ def test_evaluacion_trae_ic_y_el_readme_los_cita():
             lo, hi = g["ic95"][k]
             assert lo <= g[k] <= hi, (m, k)
     llm = informe["muestra_50"]["llm"]["global"]
-    readme = (config.RAIZ / "README.md").read_text(encoding="utf-8")
+    readme = (config.RAIZ / "README.es.md").read_text(encoding="utf-8")
     lo, hi = llm["ic95"]["exactitud_campos"]
     assert f"[{100 * lo:.1f}–{100 * hi:.1f}]".replace(".", ",") in readme
     # la cascada llama al LLM en el 46 % de la muestra y en el 30 % de las 200 (no confundirlos)

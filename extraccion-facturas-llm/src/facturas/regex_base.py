@@ -114,9 +114,6 @@ def _items(texto: str) -> list[Item]:
 
 def extraer_regex(texto: str) -> Factura:
     ruc = _buscar(r"R\.?U\.?C\.?:?\s*(\d{13})", texto)
-    claves = re.findall(r"(?<!\d)(\d{49})(?!\d)", texto)
-    cliente = _buscar(r"(?:Nombres y Apellidos|CLIENTE|Señor\(es\)):\s*(.+?)(?:\s{2,}|$)", texto) or \
-        _buscar(r"Facturar a:.*\n(.+?)(?:\s{2,}|$)", texto)
     ident = _buscar(r"(?:Identificaci[oó]n|CI/RUC|C\.I\./RUC|RUC/CI):\s*(\d{10,13})", texto)
     subtotal = _buscar(rf"{INI}SUBTOTAL:?\s+{MONTO}$", texto)
     descuento = _buscar(rf"{INI}(?:TOTAL DESCUENTO|DESC\.|Descuento:?)\s+{MONTO}", texto)

@@ -1,4 +1,4 @@
-"""Genera README.md, MODEL_CARD.md y docs/GUIA_PASO_A_PASO.md a partir de reports/resultados.json.
+"""Genera README.es.md, MODEL_CARD.md y docs/GUIA_PASO_A_PASO.md a partir de reports/resultados.json.
 
 Las plantillas viven en scripts/plantillas/ y usan marcadores {{clave}}. Ninguna cifra del README se
 escribe a mano: si cambia la evaluación, se vuelve a generar con
@@ -16,7 +16,7 @@ from . import config
 
 PLANTILLAS = config.RAIZ / "scripts" / "plantillas"
 DESTINOS = {
-    "README.md": config.RAIZ / "README.md",
+    "README.md": config.RAIZ / "README.es.md",
     "MODEL_CARD.md": config.RAIZ / "MODEL_CARD.md",
     "GUIA_PASO_A_PASO.md": config.RAIZ / "docs" / "GUIA_PASO_A_PASO.md",
 }

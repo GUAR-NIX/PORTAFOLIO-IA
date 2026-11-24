@@ -243,7 +243,7 @@ def test_17_todas_las_corridas_de_la_evaluacion_estan_grabadas():
 
 def test_18_cifras_clave_del_readme_coinciden_con_reports():
     res = _resultados()
-    readme = (RAIZ / "README.md").read_text(encoding="utf-8")
+    readme = (RAIZ / "README.es.md").read_text(encoding="utf-8")
 
     def pct(v: float) -> str:
         return f"{v * 100:.1f}".replace(".", ",") + " %"
@@ -280,7 +280,7 @@ def test_19_api_health_herramientas_y_consulta_con_rastro():
 
 
 def test_20_sin_rutas_personales_en_docs_notebooks_y_salidas():
-    archivos = [RAIZ / "README.md", RAIZ / "MODEL_CARD.md", *(RAIZ / "docs").glob("*.md"),
+    archivos = [RAIZ / "README.es.md", RAIZ / "MODEL_CARD.md", *(RAIZ / "docs").glob("*.md"),
                 *(RAIZ / "notebooks").glob("*.ipynb"), *(RAIZ / "reports").glob("*.json"),
                 *(RAIZ / "reports").glob("*.csv"), *(RAIZ / "models").glob("*.json")]
     for ruta in archivos:

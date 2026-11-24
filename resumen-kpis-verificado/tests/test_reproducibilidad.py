@@ -8,7 +8,7 @@ from kpis import config, evaluacion, generadores
 
 RAIZ = Path(__file__).resolve().parents[1]
 RES = json.loads((RAIZ / "reports" / "resultados.json").read_text(encoding="utf-8"))
-README = (RAIZ / "README.md").read_text(encoding="utf-8")
+README = (RAIZ / "README.es.md").read_text(encoding="utf-8")
 GUIA = (RAIZ / "docs" / "GUIA_PASO_A_PASO.md").read_text(encoding="utf-8")
 
 

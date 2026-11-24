@@ -9,7 +9,6 @@ from __future__ import annotations
 import json
 from typing import Any
 
-import numpy as np
 import pandas as pd
 
 from . import config, datos, evaluacion, graficos, herramientas, motor_agente

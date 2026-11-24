@@ -1,37 +1,51 @@
-🇪🇸 **Español** · 🇬🇧 [English](README.en.md)
+🇺🇸 **English** · 🇪🇸 [Español](README.es.md)
 
-# Portafolio de IA aplicada con LLM locales
+# Applied AI with local LLMs
 
-RAG híbrido, extracción estructurada, clasificación, agentes con herramientas y resúmenes verificados, todo con modelos locales y evaluación honesta.
+Six projects that run on a PC without a GPU (Ollama, FastAPI, Streamlit). Each one compares the LLM with a simpler baseline and reports
+when the baseline wins or ties.
 
-**Herramientas principales:** Ollama (qwen2.5:7b, bge-m3) · pydantic · FastAPI · Streamlit
+| Project | Measured result | Code | Tests |
+|---|---|---|---|
+| [Tool-using agent over open data](agente-datos-abiertos/README.md) | **95.0%** correct on 60 unseen questions; rule-based router 60.0% | [code](agente-datos-abiertos/src/agente) | [tests](agente-datos-abiertos/tests) |
+| [RAG over Ecuador's Labor Code](rag-ley-laboral-ecuador/README.md) | Cites the correct article in **87%** of the 100 main questions; Recall@5 **0.97** vs. 0.76 for BM25 | [code](rag-ley-laboral-ecuador/src/rag_laboral) | [tests](rag-ley-laboral-ecuador/tests) |
+| [Invoice extraction to validated JSON](extraccion-facturas-llm/README.md) | **97.5%** exact fields vs. 81.8% for regex, on 50 synthetic invoices; ~2 min per invoice | [code](extraccion-facturas-llm/src/facturas) | [tests](extraccion-facturas-llm/tests) |
+| [Complaint routing](clasificador-quejas-cfpb/README.md) | TF-IDF **0.825** Macro-F1 vs. 0.799 for the few-shot LLM: the cheap model is enough | [code](clasificador-quejas-cfpb/src/quejas) | [tests](clasificador-quejas-cfpb/tests) |
+| [Aspect-based sentiment](resenas-sentimiento-aspectos/README.md) | Aspect detection F1 **0.739** (embeddings), 0.722 (rules), 0.688 (LLM) on 320 labeled reviews | [code](resenas-sentimiento-aspectos/src/resenas) | [tests](resenas-sentimiento-aspectos/tests) |
+| [KPI summaries with checked figures](resumen-kpis-verificado/README.md) | Error-free reports from 83.3% to **91.7%** with verification and retry (12 reports) | [code](resumen-kpis-verificado/src/kpis) | [tests](resumen-kpis-verificado/tests) |
 
-Cada carpeta es un proyecto independiente, con su propio README (resultados primero), guía paso a paso, pruebas automáticas y cómo reproducirlo. Los datos crudos no se versionan: cada proyecto trae un script que los descarga desde la fuente oficial.
+## Start here
 
-## Proyectos
-
-| Proyecto | De qué trata |
+| If you are looking for… | Go to |
 |---|---|
-| [**🌐 Agente de datos abiertos con herramientas: Banco Mundial + Open-Meteo**](agente-datos-abiertos/) | Un LLM local (qwen2.5:7b en Ollama, CPU) responde preguntas sobre economía y clima de América Latina llamando a 5 herramientas conectadas al Banco Mundial (WDI) y a Open-Meteo (ERA5). El proyecto mide por separado lo que decide… |
-| [**📨 Enrutamiento de quejas financieras: TF-IDF vs. embeddings vs. LLM, cascada y urgencia**](clasificador-quejas-cfpb/) | ¿Hace falta un LLM local para enrutar quejas financieras a la mesa correcta, o basta un TF-IDF + regresión logística? Este proyecto lo mide con 50.568 quejas reales del CFPB (Consumer Financial Protection Bureau, EE. UU.; textos… |
-| [**🧾 Extracción de facturas PDF a JSON validado (LLM local + reglas del SRI)**](extraccion-facturas-llm/) | Convierte facturas ecuatorianas en PDF (digitales, escaneadas o giradas) en un JSON estructurado y validado con reglas de negocio: RUC y clave de acceso con dígito verificador, ítems que suman el subtotal, subtotal − descuento +… |
-| [**⚖️ Asistente RAG de la ley laboral del Ecuador (búsqueda híbrida + re-ranking + rechazo)**](rag-ley-laboral-ecuador/) | Responde preguntas de trabajadores y pequeñas empresas (vacaciones, décimos, horas extra, despido, liquidación) citando el artículo exacto del Código del Trabajo (607 artículos, última reforma 2026-04-09) y de la Constitución (20… |
-| [**🔎 Sentimiento por aspecto en reseñas de Amazon: reglas vs embeddings vs LLM local**](resenas-sentimiento-aspectos/) | ¿De qué se quejan los clientes de teléfonos y accesorios, y cuánto les cuesta a las marcas en estrellas? Para cada reseña el sistema extrae los aspectos que menciona (batería, carga, pantalla, sonido, calidad, ajuste, diseño,… |
-| [**📊 Resúmenes ejecutivos de KPIs con verificación de cada cifra**](resumen-kpis-verificado/) | Un LLM local (qwen2.5:7b en Ollama, CPU) redacta para gerencia el resumen económico de un país de América Latina a partir de los indicadores del Banco Mundial, y un verificador automático comprueba cada número del texto contra… |
+| **The clearest engineering example** | [Open-data agent](agente-datos-abiertos/README.md): what the LLM decides and what the code does, measured separately |
+| **An honest negative result** | [Complaint routing](clasificador-quejas-cfpb/README.md): the LLM does not beat a linear model |
+| **How it is checked** | [CI workflow](.github/workflows/ci.yml): Ruff, Markdown links and the tests of the six projects, with the LLM replaced by test doubles |
+| **Design and decisions** | The full README of each project (Spanish) has the architecture, limits and reproduction commands |
 
-## Cómo usar este repositorio
+## How results were measured
+
+- Where prompts or thresholds were tuned, the tuning set is separate from the test set; figures obtained after seeing the errors
+  are marked as optimistic in their project.
+- Intervals are 95% bootstrap or Wilson; sample sizes are in the tables.
+- Differences whose intervals overlap are reported as not distinguishable.
+- Models run on a local CPU; latencies belong to that machine.
+
+## How to use this repository
 
 ```bash
-git clone https://github.com/GUAR-NIX/portafolio-ia.git
-cd portafolio-ia/<proyecto>
+git clone https://github.com/GUAR-NIX/PORTAFOLIO-IA.git
+cd PORTAFOLIO-IA/<project>
 ```
 
-Dentro de cada proyecto, sigue la sección «Cómo reproducir» de su README y `docs/GUIA_PASO_A_PASO.md`.
+Each project has its own README, tests and `docs/GUIA_PASO_A_PASO.md` (Spanish). Raw data are not versioned: a script gets them from
+the official source. The English page of each project is a summary; the full documentation is in Spanish.
+See [CONTRIBUTING.md](CONTRIBUTING.md) to run the checks.
 
-## Autor
+## Author
 
-**Erick Guarnizo** · [LinkedIn](https://www.linkedin.com/in/erick-g-571a7b3b4)
+**Erick Guarnizo** · [LinkedIn](https://www.linkedin.com/in/erick-g-571a7b3b4) · [GitHub profile](https://github.com/GUAR-NIX)
 
-## Licencia
+## License
 
-El código está bajo licencia [MIT](LICENSE). Los datos de cada proyecto conservan la licencia de su fuente, indicada en su README.
+Code is under the [MIT](LICENSE) license. Each project's data keep the license of their source, stated in its README.

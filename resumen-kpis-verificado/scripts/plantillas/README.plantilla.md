@@ -1,4 +1,4 @@
-🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+🇪🇸 **Español** · 🇺🇸 [English (summary)](README.md)
 
 # 📊 Resúmenes ejecutivos de KPIs con verificación de cada cifra
 

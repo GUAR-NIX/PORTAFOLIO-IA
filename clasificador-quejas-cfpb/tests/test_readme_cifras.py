@@ -9,7 +9,7 @@ import pandas as pd
 from quejas import config, informe
 
 R = json.loads((config.REPORTES / "resultados.json").read_text(encoding="utf-8"))
-README = (config.RAIZ / "README.md").read_text(encoding="utf-8")
+README = (config.RAIZ / "README.es.md").read_text(encoding="utf-8")
 
 
 def test_documentos_coinciden_con_lo_que_genera_resultados_json():

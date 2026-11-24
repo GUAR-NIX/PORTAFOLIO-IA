@@ -1,4 +1,4 @@
-🇪🇸 **Español** · 🇬🇧 [English (summary)](README.en.md)
+🇪🇸 **Español** · 🇺🇸 [English (summary)](README.md)
 
 # 📨 Enrutamiento de quejas financieras: TF-IDF vs. embeddings vs. LLM, cascada y urgencia
 

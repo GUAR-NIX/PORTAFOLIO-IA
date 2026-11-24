@@ -1,4 +1,4 @@
-"""Genera README.md y la sección de resultados de la guía desde reports/resultados.json.
+"""Genera README.es.md y la sección de resultados de la guía desde reports/resultados.json.
 
     python -m kpis.informe
 
@@ -128,13 +128,13 @@ def renderizar(texto: str, res: dict) -> str:
 def main() -> None:
     res = json.loads((config.REPORTS / "resultados.json").read_text(encoding="utf-8"))
     readme = renderizar((PLANTILLAS / "README.plantilla.md").read_text(encoding="utf-8"), res)
-    (config.RAIZ / "README.md").write_text(readme, encoding="utf-8")
+    (config.RAIZ / "README.es.md").write_text(readme, encoding="utf-8")
     guia = renderizar((PLANTILLAS / "GUIA.plantilla.md").read_text(encoding="utf-8"), res)
     (config.RAIZ / "docs" / "GUIA_PASO_A_PASO.md").write_text(guia, encoding="utf-8")
     sin = re.findall(r"\{\{[^}]*\}\}", readme + guia)
     if sin:
         raise SystemExit(f"Marcadores sin resolver: {sin}")
-    print("README.md y docs/GUIA_PASO_A_PASO.md generados")
+    print("README.es.md y docs/GUIA_PASO_A_PASO.md generados")
 
 
 if __name__ == "__main__":

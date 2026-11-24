@@ -1,7 +1,6 @@
 """Generación de las 7 figuras analíticas (300 DPI) en reports/figures/ para IA_06_agente_datos_abiertos."""
 from __future__ import annotations
 
-from typing import Any
 
 import matplotlib
 

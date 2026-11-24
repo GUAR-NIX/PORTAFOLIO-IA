@@ -52,7 +52,7 @@ def test_metricas_recall_y_mrr():
 
 
 def test_readme_usa_las_cifras_de_reports():
-    readme = (config.RAIZ / "README.md").read_text(encoding="utf-8")
+    readme = (config.RAIZ / "README.es.md").read_text(encoding="utf-8")
     t = pd.DataFrame(json.loads((config.REPORTS / "recuperacion.json").read_text(encoding="utf-8"))["resultados"])
     fila = t[(t.conjunto == "principal") & (t.metodo == "rerank") & (t.sinonimos == "v2")].iloc[0]
     assert f"**{fila['recall@5']:.2f}**".replace(".", ",") in readme
@@ -100,7 +100,7 @@ def test_reports_traen_ic_y_diferencias_pareadas():
 
 
 def test_readme_cita_los_ic_de_reports():
-    readme = (config.RAIZ / "README.md").read_text(encoding="utf-8")
+    readme = (config.RAIZ / "README.es.md").read_text(encoding="utf-8")
     rec = json.loads((config.REPORTS / "recuperacion.json").read_text(encoding="utf-8"))
     f = next(x for x in rec["resultados"] if (x["conjunto"], x["metodo"], x["sinonimos"]) == ("principal", "rerank", "v2"))
     for m in ("recall@5", "mrr@20"):
